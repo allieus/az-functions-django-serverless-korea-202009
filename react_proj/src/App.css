@@ -1,0 +1,22 @@
+.App {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.post-list {
+
+}
+
+.post {
+    margin-bottom: 1em;;
+}
+
+.post .photo {
+    max-width: 100%;
+    border-radius: 25px;
+}
+
+.post .message {
+    padding: .5em;
+}
