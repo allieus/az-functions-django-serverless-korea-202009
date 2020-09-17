@@ -40,7 +40,6 @@ DEBUG = env.bool('DEBUG', True)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -89,10 +88,7 @@ WSGI_APPLICATION = 'dj_proj.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': env.db(),
 }
 
 
@@ -136,3 +132,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_STORAGE = 'dj_proj.storages.StaticAzureStorage'
+DEFAULT_FILE_STORAGE = 'dj_proj.storages.MediaAzureStorage'
+
+AZURE_ACCOUNT_NAME = env.str('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = env.str('AZURE_ACCOUNT_KEY')

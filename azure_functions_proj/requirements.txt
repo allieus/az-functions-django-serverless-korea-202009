@@ -3,9 +3,12 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
+djangorestframework
 
 django~=3.0.0
 django-environ
 
-djangorestframework
-pillow
+pyodbc
+django-mssql-backend
+
+django-storages[azure]
